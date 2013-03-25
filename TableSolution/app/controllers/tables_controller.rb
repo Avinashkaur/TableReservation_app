@@ -1,8 +1,10 @@
 class TablesController < ApplicationController
   # GET /tables
   # GET /tables.json
+
   def index
     @tables = Table.where("floor_id is NULL").order("created_at DESC")
+    
 
     respond_to do |format|
       format.html # index.html.erb

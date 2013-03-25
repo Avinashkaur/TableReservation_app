@@ -14,16 +14,23 @@
   float: right;
   margin-top: 10px;
 }
+.action_column_header {
+  width: 100px;
+}
+#table_container {
+  float: left;
+  width: 70%;
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
 h2 {
   margin-top: 20px;
   margin-left: 10px;
 }
-h3 {
-  margin-left:30px;
-}
 #unassigned {
-  margin-left:30px;
-  width: 70%;
+  border: solid 1px black;
+  margin-left:10px;
   float: left;
 }
 #unassigned tr, #floor_show tr {
@@ -31,21 +38,23 @@ h3 {
   
 }
 #unassigned tr td, #floor_show tr td {
-  padding: 2px 40px;
+  padding: 2px 30px;
+}
+#unassigned tr th, #floor_show tr th {
+  padding: 2px 30px;
 }
 
 #unassigned .heading, #floor_show .heading {
   background-color: #707070;
   color: #ffffff;
-  
 }
+
 #floor_view {
   border: solid 1px black;
   border-radius: 20px;
   padding: 10px;
   float: left;
-  margin-left: 100px; 
-  margin-top: 20px; 
+  margin: 20px 20%;
 }
 #floor_label {
   font-size: 20px;
@@ -53,16 +62,9 @@ h3 {
   padding: 10px;
 }
 #floor_show {
-  list-style-type: none;
-  margin-right:200px;
-  float: right;
-
-}
-#floor_show li {
-  float: none;
+  float: left;
   border: solid 1px black;
-  padding: 2px;
-  margin: 0px;
+  margin-left: 20px;
 }
 #delete_image {
   width: 25px;
@@ -80,4 +82,20 @@ h3 {
   background-color: #707070;
   border-radius: 10px;
   color: white;
+}
+.new_h3 {
+  margin-left: 20px;
+  float: left;
+}
+.list_line_even {
+background: #A0A0A0;
+}
+.list_line_odd {
+background: #D8D8D8;
+}
+#floor {
+  float: left;
+  margin-top: 5px;
+  padding: 3px;
+  width: 100px;
 }

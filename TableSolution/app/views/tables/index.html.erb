@@ -3,43 +3,47 @@
   <%= button_to 'New Table', new_table_path, { :method => 'get', :class => 'create_button'} %>
 </div>
 
-<h3>Unassigned Tables:</h3>
-<table id="unassigned">
-  <tr class="heading">
-    <td>Name</td>
-    <td>Active?</td>
-    <td>Seats</td>
-    <td>Connectable?</td>
-    <td>Smoking?</td>
-  </tr>
+<div id="table_container">
+  <h3 class="new_h3">Unassigned Tables:</h3>
+  <table id="unassigned">
+    <tr class="heading">
+      <th>Name</th>
+      <th>Active?</th>
+      <th>Seats</th>
+      <th>Connectable?</th>
+      <th>Smoking?</th>
+      <th class="action_column_header">Edit?</th>
+      <th class="action_column_header">Delete?</th>
 
-<% @tables.each do |table| %>
-  <tr>
-    <td><%= table.name %></td>
-    <td><%= table.is_active %></td>
-    <td><%= table.max_people %></td>
-    <td><%= table.is_connectable %></td>
-    <td><%= table.is_smoking %></td>
-    <td><%= link_to 'Edit', edit_table_path(table.id) %></td>
-    <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    </tr>
 
-<ul id="floor_show">
-  <li class="heading">Floor</li>
-  <li>Ground Floor</li>
-</ul>
+  <% @tables.each do |table| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td><%= table.name %></td>
+      <td><%= table.is_active %></td>
+      <td><%= table.max_people %></td>
+      <td><%= table.is_connectable %></td>
+      <td><%= table.is_smoking %></td>
+      <td><%= link_to 'Edit', edit_table_path(table.id) %></td>
+      <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
 
 <div id="floor_view">
   <div id="floor_heading">
-    <label id="floor_label">Floor <label id="floor_num">1</label></label>
+
+    <label id="floor_label">Floor <%=  %></label>
     <%= link_to image_tag("delete.jpg", :id => "delete_image") %>
+    <% floors_array = Floor.all.map { |floor| "#{floor.position} : #{floor.name}" } %>
+    <span>
+      <%= select_tag(:floor, options_for_select(floors_array)) %>
+    </span>
   </div>
 
   <%= image_tag("floor.jpg",:id => "floor_image") %>
 </div>
-
 
 

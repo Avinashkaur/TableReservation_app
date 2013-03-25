@@ -5,7 +5,7 @@ class FloorsController < ApplicationController
     @floors = Floor.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { redirect_to tables_path } # index.html.erb
       format.json { render json: @floors }
     end
   end
@@ -38,7 +38,7 @@ class FloorsController < ApplicationController
   end
 
   # POST /floors
-  # POST /floors.json
+  # POST /floors.json 
   def create
     @floor = Floor.new(params[:floor])
 

@@ -42,10 +42,10 @@ h1 {
   margin: 0px 5px;
   border: solid 1px black;
 }
-ul {
+#tabs ul {
   list-style-type: none;
 }
-ul li {
+#tabs ul li {
   float: left;
   margin-top: 10px;
   margin-bottom: 10px;

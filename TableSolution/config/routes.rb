@@ -1,21 +1,6 @@
 TableSolution::Application.routes.draw do
   # get "tables/index"
-  resources :reservations
-
-
-  resources :reservations_tables
-
-
-  resources :customers
-
-
-  resources :images
-
-
-  resources :tables
-
-
-  resources :floors
+  resources :reservations, :reservations_tables, :customers, :images, :tables, :floors
 
 
   # The priority is based upon order of creation:
