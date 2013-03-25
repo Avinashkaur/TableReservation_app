@@ -1,0 +1,83 @@
+// Place all the styles related to the Tables controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#header_button {
+  float: left;
+  width: 70%;
+  margin-right: 400px;
+}
+.create_button,  {
+  display: inline;
+}
+.button_to, .button_to div {
+  display: inline;
+  float: right;
+  margin-top: 10px;
+}
+h2 {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+h3 {
+  margin-left:30px;
+}
+#unassigned {
+  margin-left:30px;
+  width: 70%;
+  float: left;
+}
+#unassigned tr, #floor_show tr {
+  border: solid 1px black;
+  
+}
+#unassigned tr td, #floor_show tr td {
+  padding: 2px 40px;
+}
+
+#unassigned .heading, #floor_show .heading {
+  background-color: #707070;
+  color: #ffffff;
+  
+}
+#floor_view {
+  border: solid 1px black;
+  border-radius: 20px;
+  padding: 10px;
+  float: left;
+  margin-left: 100px; 
+  margin-top: 20px; 
+}
+#floor_label {
+  font-size: 20px;
+  float: left;
+  padding: 10px;
+}
+#floor_show {
+  list-style-type: none;
+  margin-right:200px;
+  float: right;
+
+}
+#floor_show li {
+  float: none;
+  border: solid 1px black;
+  padding: 2px;
+  margin: 0px;
+}
+#delete_image {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin: 10px 2px 5px 0px;
+}
+#floor_image {
+  float: left;
+  
+}
+#floor_heading {
+  height: 40px;
+  width: 680px;
+  background-color: #707070;
+  border-radius: 10px;
+  color: white;
+}
