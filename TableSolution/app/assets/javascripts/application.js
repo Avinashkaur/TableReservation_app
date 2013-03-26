@@ -15,7 +15,7 @@
 //= require_tree .
 //= require jquery-1.9.1.js
 //= require jquery-ui.js
-$(function() {
-    $( "#datepicker" ).datepicker();
-  });
+// $(function() {
+//     $( "#datepicker" ).datepicker();
+//   });
 
