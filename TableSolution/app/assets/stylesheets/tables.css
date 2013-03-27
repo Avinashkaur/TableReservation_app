@@ -99,13 +99,10 @@ background: #D8D8D8;
 #floor_image_div{
   float: left;
   position: relative;
-}
-#floor_image {
-  float: left;
-  position: relative;
   width: 679px;
   height: 443px;
 }
+
 .table_pic {
   width: 70px;
   height: 70px;
@@ -113,27 +110,24 @@ background: #D8D8D8;
   border-radius: 40px;
   background-color: red;
   z-index:100;
+  float: left;
 }
 .table_pic label{
   float: left;
   margin-left: 10px;
   margin-top: 20px; 
 }
-#slot_container {
-  position: absolute;
-  z-index:10;
-}
+
 .slot {
   background-color: black;
   float:left;
   width: 70px;
   height: 70px;
+  border-radius: 40px;
   z-index: 10;
+  margin: 20px;
 }
-#slot1, #slot4, #slot6 {
-  margin: 30px 60px;
-}
-#slot2, #slot3, #slot5, #slot7 {
-  margin: 20px 30px;
+.hovered {
+  background-color: blue;
 }
 
