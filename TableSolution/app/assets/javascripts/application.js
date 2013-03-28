@@ -18,4 +18,5 @@
 // $(function() {
 //     $( "#datepicker" ).datepicker();
 //   });
+$("#tabs ul").tabs({ active: 1 });
 

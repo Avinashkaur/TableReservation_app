@@ -58,9 +58,10 @@ h1 {
   border: solid 1px black;
   margin: 2px 5px;
   height: 30px;
-  padding: 5px;
   text-decoration: none;
-  font-size: 15px;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 #main {
   margin: 0px 5px 5px 5px;
@@ -68,5 +69,5 @@ h1 {
   float: left;
   width: 100%;
   height: auto;
-
 }
+
