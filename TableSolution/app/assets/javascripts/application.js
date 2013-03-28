@@ -15,8 +15,12 @@
 //= require_tree .
 //= require jquery-1.9.1.js
 //= require jquery-ui.js
-// $(function() {
-//     $( "#datepicker" ).datepicker();
-//   });
-$("#tabs ul").tabs({ active: 1 });
 
+$(document).ready(function() {
+  function check_url() {
+    url = $(location).attr('href').split("/");
+    len = url.length;
+    $("#tabs ul li[id=" + url[len-1] + "_tab]").find("a").addClass("active")
+  }
+  check_url();
+});

@@ -1,4 +1,5 @@
 $(document).ready( function() {
+
   $("#unassigned tr td").each(function(){
     $(this).draggable({
       helper: "clone",
@@ -70,5 +71,6 @@ $(document).ready( function() {
       // $newDiv.css("top", $newPosY);
     
     }
+  
 });
 
