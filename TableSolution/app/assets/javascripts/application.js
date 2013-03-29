@@ -17,10 +17,14 @@
 //= require jquery-ui.js
 
 $(document).ready(function() {
-  function check_url() {
-    url = $(location).attr('href').split("/");
-    len = url.length;
-    $("#tabs ul li[id=" + url[len-1] + "_tab]").find("a").addClass("active")
-  }
   check_url();
 });
+function check_url() {
+  var doc_location = $(location).attr("href");
+  if ((/tables/).test(doc_location)) {
+    $("#tabs ul #tables_tab").find("a").addClass("active");
+  }
+  else if ((/reservations/).test(doc_location)) {
+    $("#tabs ul #reservations_tab").find("a").addClass("active");
+  }
+}

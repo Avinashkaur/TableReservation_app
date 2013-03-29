@@ -9,30 +9,25 @@ $(document).ready( function() {
     });
   });
 
-  
-  // $length = $("#floor_image_div .slot").length;
-  // for ( i = 1; i <= $length; i++) {
-  //   $("#floor_image_div #slot" + i).droppable({
-  //     accept: '#unassigned tr td',
-  //     drop: handleTableDrop,
-  //     hoverClass: "hovered"
-  //   });
-  // }
+  $("#floor_image_div .table_pic").each(function() {
+    $(this).position({
+      of: "#floor_image_div"
+    });
+  });
 
-  
+
+  function create_table_div(table_class, label_value, appendToElement) {
+    table_div = $("<div>").addClass(table_class).append($("<label>").text(label_value)).appendTo(appendToElement);
+    table_div
+  }
 
   $("#floor_image_div").delegate("div[class=table_pic]", "mousedown", function(){
     $(this).draggable({
       stack: '#floor_image_div .table_pic',
       cursor: 'move',
       revert: true,
-      // stop: function(event, ui) {
-      //   console.log($(this).closest("div"))
-      // }
     });
   });
-
-  
 
   $("#floor_image_div .slot").each(function() {
     $(this).droppable({
@@ -43,13 +38,14 @@ $(document).ready( function() {
   });
 
   function handleTableDrop(event, ui) {
-        
+
     if (!($(ui.draggable).hasClass("table_pic"))) {
       $(ui.draggable).closest('tr').detach().css({top: 0,left: 0});
       table_value = $(ui.draggable).closest('tr').find("td:first-child").text();
-      
+      record_id = $(ui.draggable).closest('tr').attr("obj_id");
     }
     else {
+      record_id = $(ui.draggable).attr("obj_id");
       table_value = $(ui.draggable).find('label').text();
       $dragged_id = $(ui.draggable).closest('.slot').attr("id");
       $dropped_id = $(this).attr("id");
@@ -59,18 +55,28 @@ $(document).ready( function() {
       $(ui.draggable).remove();
     }
 
-    $newDiv = $("<div>").addClass("table_pic") 
-    $newDiv.append($("<label>").text(table_value));
-    $newDiv.appendTo($(this));
+    // $newDiv = $("<div>").attr("obj_id", record_id).addClass("table_pic");
+    $newDiv = create_table_div("table_pic", table_value, $(this));
+    $newDiv.attr("obj_id", record_id);
+    // $newDiv.append($("<label>").text(table_value));
+    // $newDiv.appendTo($(this));
     $(ui.draggable).draggable({"revert": false });
     $(this).droppable("disable");
       
-    var $newPosX = $(this).offset().left - $(this).closest('#floor_image_div').offset().left;
-    var $newPosY = $(this).offset().top - $(this).closest('#floor_image_div').offset().top;
-      // $newDiv.css("left", $newPosX);
-      // $newDiv.css("top", $newPosY);
-    
-    }
-  
-});
+    var newPosX = $(this).offset().left - $(this).closest('#floor_image_div').offset().left;
+    var newPosY = $(this).offset().top - $(this).closest('#floor_image_div').offset().top;
 
+    floor_id = $("#floor_heading select option:selected").attr("f_id");
+
+    $.ajax({
+      url: "/tables/" + record_id,
+      method: "put",
+      data: {"table" : {"id" : record_id, "floor_id" : floor_id, "floor_x_location" : newPosX, "floor_y_location" : newPosY} },
+      beforeSend: function() {
+        alert("sending");
+      }
+    });
+  }
+
+  show_tables();
+});

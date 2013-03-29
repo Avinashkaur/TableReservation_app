@@ -18,7 +18,7 @@
     </tr>
 
   <% @tables.each do |table| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" obj_id="<%= table.id %>" >
       <td><%= table.name %></td>
       <td><%= table.is_active %></td>
       <td><%= table.max_people %></td>
@@ -35,9 +35,9 @@
 <div id="floor_view">
   <div id="floor_heading">
 
-    <label id="floor_label">Floor <%=  %></label>
+    <label id="floor_label">Floor</label>
     <%= link_to image_tag("delete.jpg", :id => "delete_image") %>
-    <% floors_array = Floor.all.map { |floor| "#{floor.position} : #{floor.name}" } %>
+    <% floors_array = Floor.all.map { |floor| [floor.position, floor.name, {'f_id'=> floor.id}] } %>
     <span>
       <%= select_tag(:floor, options_for_select(floors_array)) %>
     </span>
@@ -52,6 +52,15 @@
     <div class="slot" id="slot6"></div>
     <div class="slot" id="slot7"></div>
   </div>
+
+  <% @tables_to_show.each do |t| %>
+
+
+    <div class="table_pic" style="margin-left: <%= t.floor_x_location%>px; margin-top: <%= t.floor_y_location%>px;">
+      <label><%= t.name %></label>
+    </div>
+  <% end %>
+
 </div>
   
 

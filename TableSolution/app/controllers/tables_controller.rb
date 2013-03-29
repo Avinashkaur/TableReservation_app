@@ -4,6 +4,7 @@ class TablesController < ApplicationController
 
   def index
     @tables = Table.where("floor_id is NULL").order("created_at DESC")
+    @tables_to_show = Table.where("floor_id is not NULL");
     
 
     respond_to do |format|
@@ -42,8 +43,9 @@ class TablesController < ApplicationController
   # POST /tables
   # POST /tables.json
   def create
+    
     @table = Table.new(params[:table])
-
+    # debugger
     respond_to do |format|
       if @table.save
         format.html { redirect_to @table, notice: 'Table was successfully created.' }
@@ -58,12 +60,18 @@ class TablesController < ApplicationController
   # PUT /tables/1
   # PUT /tables/1.json
   def update
+    # debugger
+    
+    # p "params: #{params[:table]}"
+
+    # @table.update_attributes(params[:floor_id]);
+
     @table = Table.find(params[:id])
 
     respond_to do |format|
       if @table.update_attributes(params[:table])
-        format.html { redirect_to @table, notice: 'Table was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @tables }
+        format.json { render json: @tables }
       else
         format.html { render action: "edit" }
         format.json { render json: @table.errors, status: :unprocessable_entity }
