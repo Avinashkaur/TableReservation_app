@@ -14,10 +14,12 @@ class FloorsController < ApplicationController
   # GET /floors/1.json
   def show
     @floor = Floor.find(params[:id])
+    @tables_to_show = @floor.tables
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @floor }
+      format.js
     end
   end
 

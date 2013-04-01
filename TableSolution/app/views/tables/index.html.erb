@@ -37,32 +37,14 @@
 
     <label id="floor_label">Floor</label>
     <%= link_to image_tag("delete.jpg", :id => "delete_image") %>
-    <% floors_array = Floor.all.map { |floor| [floor.position, floor.name, {'f_id'=> floor.id}] } %>
+    <% floors_array = Floor.all.map { |floor| [floor.position,floor.id] } %>
     <span>
       <%= select_tag(:floor, options_for_select(floors_array)) %>
     </span>
   </div>
 
   <div id="floor_image_div">
-    <div class="slot" id="slot1"></div>
-    <div class="slot" id="slot2"></div>
-    <div class="slot" id="slot3"></div>
-    <div class="slot" id="slot4"></div>
-    <div class="slot" id="slot5"></div>
-    <div class="slot" id="slot6"></div>
-    <div class="slot" id="slot7"></div>
+  <%= render 'table' %>
   </div>
 
-  <% @tables_to_show.each do |t| %>
-
-
-    <div class="table_pic" style="margin-left: <%= t.floor_x_location%>px; margin-top: <%= t.floor_y_location%>px;">
-      <label><%= t.name %></label>
-    </div>
-  <% end %>
-
-</div>
-  
-
-
-
+</div> 

@@ -16,8 +16,8 @@
   margin: 0px;
 }
 #banner {
-  margin: 5px 5px 0px;
-  width: 100%;
+  margin: 5px auto 0px;
+  width: 1350px;
   float: left;
   background-color: black;
   color: white;
@@ -37,9 +37,9 @@ h1 {
   font-size: 50px;
 }
 #tabs {
-  width: 100%;
+  width: 1350px;
   float:left;
-  margin: 0px 5px;
+  margin: 0px auto;
   border: solid 1px black;
 }
 #tabs ul {
@@ -69,11 +69,11 @@ h1 {
   /*color: black;*/
 }
 #main {
-  margin: 0px 5px 5px 5px;
+  margin: 0px auto 5px;
   background-color: #e3e3e3;
   float: left;
-  width: 100%;
+  width: 1350px;
   height: auto;
 }
 
-
+  

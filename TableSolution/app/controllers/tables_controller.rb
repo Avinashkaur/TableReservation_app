@@ -4,7 +4,7 @@ class TablesController < ApplicationController
 
   def index
     @tables = Table.where("floor_id is NULL").order("created_at DESC")
-    @tables_to_show = Table.where("floor_id is not NULL");
+    @tables_to_show = Floor.first.tables
     
 
     respond_to do |format|
@@ -60,14 +60,9 @@ class TablesController < ApplicationController
   # PUT /tables/1
   # PUT /tables/1.json
   def update
-    # debugger
     
-    # p "params: #{params[:table]}"
-
-    # @table.update_attributes(params[:floor_id]);
-
     @table = Table.find(params[:id])
-
+    
     respond_to do |format|
       if @table.update_attributes(params[:table])
         format.html { redirect_to @tables }
