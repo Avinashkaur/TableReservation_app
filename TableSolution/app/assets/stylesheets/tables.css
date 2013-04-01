@@ -51,7 +51,7 @@ h2 {
   border-radius: 20px;
   padding: 10px;
   float: left;
-  margin: 20px 20%;
+  margin: 20px 2px;
 }
 #floor_label {
   font-size: 20px;
@@ -139,3 +139,10 @@ background: #D8D8D8;
   font-size: 14px;
   font-weight: bold;
 }
+.unassignTable {
+  float:left;
+  width: 250px;
+  margin-left: 20px;
+  height: 500px;
+}
+

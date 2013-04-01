@@ -26,18 +26,34 @@ $(document).ready( function() {
     });
   });
 
-  // $("#floor_image_div").delegate(".slot", "mouseenter", function() {
-  //   $(this).droppable({
-  //     accept: "#unassigned tr td, #floor_image_div .table_pic",
-  //     drop: handleTableDrop,
-  //     hoverClass: "hovered"
-  //   });
-  // });
+
+  $(".unassignTable").each(function() {
+    $(this).droppable({
+      accept: "#floor_image_div .table_pic",
+      drop: function(event, ui) {
+        
+        if (confirm("Are you sure you want to unassign table?")) {
+          $(ui.draggable).draggable({ "revert": false });
+          table_id = $(ui.draggable).attr("obj_id");
+          $.ajax ({
+            url: "/tables/" + table_id,
+            method: "put",
+            data: {"table" : {"floor_id": null , "floor_x_location": null, "floor_y_location": null}, "id": table_id},
+            beforeSend: function() {
+              alert("sending");
+            }
+          });
+        }
+
+      }
+    })
+  })
+
 
   appendTablesToSlot();
   makeDroppable();
   disableDroppable();
-
+  
 });
 
 var disableDroppable = function() {
@@ -45,7 +61,6 @@ var disableDroppable = function() {
     $(this).droppable("disable");
   });
 }
-
 
 var appendTablesToSlot = function () {
   $(".slot").each(function() {
@@ -109,11 +124,20 @@ var handleTableDrop = function(event, ui) {
     $.ajax({
       url: "/tables/" + record_id,
       method: "put",
-      data: {"table" : {"id" : record_id, "floor_id" : floor_id, "floor_x_location" : newPosX, "floor_y_location" : newPosY} },
-      beforeSend: function() {
-        alert("sending");
-      }
+      data: {"table" : {"id" : record_id, "floor_id" : floor_id, "floor_x_location" : newPosX, "floor_y_location" : newPosY} }
     });
   }
+
+  // var makeOutsideAreaDroppable = function() {
+  //   $("#main").droppable({
+  //     accept: "#floor_image_div .table_pic",
+  //     over: function(event, ui) {
+  //       // event.stopPropagation();
+  //       $("#floor_image_div").droppable("disable");
+  //       alert("dropped");
+
+  //     }
+  //   })
+  // }
 
 
