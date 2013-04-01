@@ -35,19 +35,47 @@ $(document).ready( function() {
         if (confirm("Are you sure you want to unassign table?")) {
           $(ui.draggable).draggable({ "revert": false });
           table_id = $(ui.draggable).attr("obj_id");
+          $(ui.draggable).remove();
           $.ajax ({
             url: "/tables/" + table_id,
             method: "put",
             data: {"table" : {"floor_id": null , "floor_x_location": null, "floor_y_location": null}, "id": table_id},
-            beforeSend: function() {
-              alert("sending");
-            }
           });
+
+          // $.ajax({
+          //   url: "/tables",
+          //   method: "get",
+          //   afterSend: function() {
+          //     alert("Sent!");
+          //   }
+          // });
+          // $.when(updateDB(table_id), updateDisplay()).done( alert("sent!"));
+          
         }
 
       }
     })
   })
+
+
+
+  // function updateDB(table_id) {
+  //   console.log("in updateDB")
+  //   return $.ajax ({
+  //             url: "/tables/" + table_id,
+  //             method: "put",
+  //             data: {"table" : {"floor_id": null , "floor_x_location": null, "floor_y_location": null}, "id": table_id}
+  //           });
+  // }
+
+  // function updateDisplay() {
+  //   console.log("in updateDisplay")
+  //   return $.ajax({
+  //             url: "/tables",
+  //             method: "get"
+
+  //           });
+  // }
 
 
   appendTablesToSlot();

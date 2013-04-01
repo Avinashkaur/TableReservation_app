@@ -60,13 +60,13 @@ class TablesController < ApplicationController
   # PUT /tables/1
   # PUT /tables/1.json
   def update
-    
     @table = Table.find(params[:id])
     
     respond_to do |format|
       if @table.update_attributes(params[:table])
         format.html { redirect_to @table }
         format.json { render json: @table }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @table.errors, status: :unprocessable_entity }
