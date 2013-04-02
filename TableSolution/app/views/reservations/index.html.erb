@@ -8,7 +8,7 @@
   <div id="cust_list">
     <ul>
       <% @customers.each do |cust| %>
-      <li><%= cust.name %></li>
+      <li value="<%= cust.name %>"><%= cust.name %></li>
       <% end %>
     </ul>
   </div>

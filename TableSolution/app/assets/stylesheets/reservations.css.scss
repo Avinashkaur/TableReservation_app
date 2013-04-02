@@ -27,9 +27,12 @@
 }
 #cust_list ul {
   margin-left: 20px;
+  list-style-type: none;
 }
 #cust_list ul li {
   float: none;
+  font-size: 13px;
+  margin-left: 4px;
 }
 #date_div {
   border: solid 1px black;
@@ -91,11 +94,29 @@
   height: auto;
   z-index: 10;
   background-color: white;
+  border: solid 1px black;
   list-style-type: none;
-  li {
+  padding: 0px 5px;
+}
+#search_box .ui-autocomplete li {
     z-index: 20;
   }
-}
 #search_box span {
   display: none;
+}
+#ui-datepicker-div {
+  background-color: white;
+  /*width: 175px;*/
+  border: solid 1px black;
+}
+.ui-datepicker-calendar {
+  margin: 0px 15px;
+  
+}
+.ui-datepicker-calendar tr td {
+  padding: 1px;
+}
+.ui-datepicker-previous, .ui-datepicker-next {
+  margin-left: 10px;
+
 }
