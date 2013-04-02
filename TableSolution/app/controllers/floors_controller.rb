@@ -6,7 +6,6 @@ class FloorsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to tables_path } # index.html.erb
-      format.json { render json: @floors }
     end
   end
 
@@ -18,7 +17,6 @@ class FloorsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @floor }
       format.js
     end
   end
@@ -30,7 +28,6 @@ class FloorsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @floor }
     end
   end
 
@@ -47,10 +44,8 @@ class FloorsController < ApplicationController
     respond_to do |format|
       if @floor.save
         format.html { redirect_to @floor, notice: 'Floor was successfully created.' }
-        format.json { render json: @floor, status: :created, location: @floor }
       else
         format.html { render action: "new" }
-        format.json { render json: @floor.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -63,10 +58,8 @@ class FloorsController < ApplicationController
     respond_to do |format|
       if @floor.update_attributes(params[:floor])
         format.html { redirect_to @floor, notice: 'Floor was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @floor.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -79,7 +72,6 @@ class FloorsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to floors_url }
-      format.json { head :no_content }
     end
   end
 end

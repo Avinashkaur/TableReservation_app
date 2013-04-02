@@ -6,10 +6,8 @@ class TablesController < ApplicationController
     @tables = Table.where("floor_id is NULL").order("created_at DESC")
     @tables_to_show = Floor.first.tables
     
-
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tables }
     end
   end
 
@@ -20,7 +18,6 @@ class TablesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @table }
     end
   end
 
@@ -31,7 +28,6 @@ class TablesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @table }
     end
   end
 
@@ -49,10 +45,8 @@ class TablesController < ApplicationController
     respond_to do |format|
       if @table.save
         format.html { redirect_to @table, notice: 'Table was successfully created.' }
-        format.json { render json: @table, status: :created, location: @table }
       else
         format.html { render action: "new" }
-        format.json { render json: @table.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,16 +54,16 @@ class TablesController < ApplicationController
   # PUT /tables/1
   # PUT /tables/1.json
   def update
+    @tables = Table.where("floor_id is NULL").order("created_at DESC")
     @table = Table.find(params[:id])
-    
+    @tables_to_show = Floor.first.tables
+
     respond_to do |format|
       if @table.update_attributes(params[:table])
-        format.html { redirect_to @table }
-        format.json { render json: @table }
         format.js
+        format.html { redirect_to @table }
       else
         format.html { render action: "edit" }
-        format.json { render json: @table.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -82,7 +76,6 @@ class TablesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to tables_url }
-      format.json { head :no_content }
     end
   end
 end

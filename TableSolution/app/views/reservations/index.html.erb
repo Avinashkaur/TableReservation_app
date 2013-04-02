@@ -1,14 +1,15 @@
 <h2>Listing reservations</h2>
 
 <div id="side_panel">
-  <label>Customers</label>
+  <label for="tags">Customers</label>
   <div id="search_box">
-    <input type="text" />
+    <input id="tags" type="text" />
   </div>
   <div id="cust_list">
     <ul>
-      <li>John</li>
-      <li>Mark</li>
+      <% @customers.each do |cust| %>
+      <li><%= cust.name %></li>
+      <% end %>
     </ul>
   </div>
   <div id="floor_show_reserve">
