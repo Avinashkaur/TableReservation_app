@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @floor.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @floor.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_floor_path(@floor) %> |
+<%= link_to 'Back', floors_path %>

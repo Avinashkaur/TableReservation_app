@@ -1,0 +1,5 @@
+<% if @reservation.new_record? %>
+ $("#popup_reserve").html("<%= j(render 'form').html_safe %>");
+<% else %>
+ $("#popup_reserve").hide();
+ <% end %>

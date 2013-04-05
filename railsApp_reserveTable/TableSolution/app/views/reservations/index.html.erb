@@ -1,0 +1,69 @@
+<h2>Listing reservations</h2>
+
+<div id="side_panel">
+  <label for="tags">Customers</label>
+  <div id="search_box">
+    <input id="tags" type="text" />
+  </div>
+  <div id="cust_list">
+    <ul>
+      <% @customers.each do |cust| %>
+      <li cust_id="<%= cust.id %>"><%= cust.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<table hidden>
+  <tr>
+    <th>Num people</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reservations.each do |reservation| %>
+  <tr>
+    <td><%= reservation.num_people %></td>
+    <td><%= link_to 'Show', reservation %></td>
+    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+    <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<div id="container">
+  <div id="date_div">
+    <input type="text" id="datepicker" />
+    <input type="radio" name="meal" />Breakfast
+    <input type="radio" name="meal" />Lunch
+    <input type="radio" name="meal" />Dinner
+  </div>
+
+  <div id="reserve_table">
+    <div class="floor_heading_reserve">
+      <label class="floor_label_reserve">Floor</label>
+      <% floors_array = Floor.all.map { |floor| [floor.position,floor.id] } %>
+      <span>
+      <%= select_tag(:floor, options_for_select(floors_array)) %>
+      </span>
+    </div>
+
+    <div id="floor_image_div_r">
+      <%= render 'reservations' %>
+    </div>
+
+
+    <div id="popup_reserve" hidden>
+      <%= render 'form' %>
+    </div>
+    
+  
+  </div>
+
+  
+</div>
+
+<br />
+
+

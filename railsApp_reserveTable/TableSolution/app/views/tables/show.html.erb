@@ -1,0 +1,30 @@
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @table.name %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @table.is_active %>
+</p>
+
+<p>
+  <b>Max people:</b>
+  <%= @table.max_people %>
+</p>
+
+<p>
+  <b>Is connectable:</b>
+  <%= @table.is_connectable %>
+</p>
+
+<p>
+  <b>Is smoking:</b>
+  <%= @table.is_smoking %>
+</p>
+
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>
