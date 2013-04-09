@@ -1,6 +1,6 @@
 <%= form_for(@reservation,  :remote => true) do |f| %>
 <%= f.hidden_field :customer_id %>
-<%= hidden_field_tag :table_id, params[:table_id] %>
+ <%= f.hidden_field :table_id %>
 
   <% if @reservation.errors.any? %>
     <div id="error_explanation">
