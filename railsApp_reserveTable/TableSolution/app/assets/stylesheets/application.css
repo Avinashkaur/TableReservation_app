@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require jquery.fancybox.css
+ *= require jquery.fancybox-buttons.css
+ *= require jquery.fancybox-thumbs.css
+ */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+#banner {
+  margin: 5px auto 0px;
+  width: 1350px;
+  float: left;
+  background-color: black;
+  color: white;
+  height: 100px;
+}
+#banner img {
+  float: left;
+  margin-left: 300px;
+  padding: 10px;
+  height: 70px;
+}
+h1 {
+  margin-top: 20px;
+  display: inline;
+  padding: 20px;
+  float: left;
+  font-size: 50px;
+}
+#tabs {
+  width: 1350px;
+  float:left;
+  margin: 0px auto;
+  border: solid 1px black;
+}
+#tabs ul {
+  list-style-type: none;
+}
+#tabs ul li {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*background-color: #e3e3e3;*/
+}
+#tabs a:hover {
+  background-color: black;
+}
+.active {
+  background-color: black;
+  color: white;
+}
+#tabs a {
+  border: solid 1px black;
+  margin: 2px 5px;
+  height: 30px;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  /*color: black;*/
+}
+#main {
+  margin: 0px auto 5px;
+  background-color: #e3e3e3;
+  float: left;
+  width: 1350px;
+  height: auto;
+}
+
+  

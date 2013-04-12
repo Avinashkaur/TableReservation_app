@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TableSolution</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="banner">
+    <%= image_tag("logo.png") %><h1>TableSolution</h1>
+  </div>
+
+
+    <div id="tabs">
+      <ul>
+        <li id="tables_tab"><%= link_to 'Tables', tables_path %></li>
+        <li id="reservations_tab"><%= link_to 'Reservations', reservations_path %></li>
+      </ul>
+    </div>
+  
+  <div id="main">
+    <%= yield %>
+  </div>
+ 
+</body>
+</html>

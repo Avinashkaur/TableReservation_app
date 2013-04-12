@@ -1,0 +1,147 @@
+#header_button {
+  float: left;
+  width: 70%;
+  margin-right: 400px;
+}
+.create_button,  {
+  display: inline;
+}
+.button_to, .button_to div {
+  display: inline;
+  float: right;
+  margin-top: 10px;
+}
+.action_column_header {
+  width: 100px;
+}
+#table_container {
+  float: left;
+  width: 70%;
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+#unassigned {
+  border: solid 1px black;
+  margin-left:10px;
+  float: left;
+}
+#unassigned tr, #floor_show tr {
+  border: solid 1px black;
+  
+}
+#unassigned tr td, #floor_show tr td {
+  padding: 2px 30px;
+}
+#unassigned tr th, #floor_show tr th {
+  padding: 2px 30px;
+}
+
+#unassigned .heading, #floor_show .heading {
+  background-color: #707070;
+  color: #ffffff;
+}
+.hovered {
+  background-color: blue;
+}
+#floor_view {
+  border: solid 1px black;
+  border-radius: 20px;
+  padding: 10px;
+  float: left;
+  margin: 20px 2px;
+}
+#floor_label {
+  font-size: 20px;
+  float: left;
+  padding: 10px;
+}
+#floor_show {
+  float: left;
+  border: solid 1px black;
+  margin-left: 20px;
+}
+#delete_image {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin: 10px 2px 5px 0px;
+}
+
+#floor_heading {
+  height: 40px;
+  width: 680px;
+  background-color: #707070;
+  border-radius: 10px;
+  color: white;
+}
+.new_h3 {
+  margin-left: 20px;
+  float: left;
+}
+.list_line_even {
+background: #A0A0A0;
+}
+.list_line_odd {
+background: #D8D8D8;
+}
+#floor {
+  float: left;
+  margin-top: 5px;
+  padding: 3px;
+  width: 100px;
+}
+#floor_image_div{
+  float: left;
+  position: relative;
+  width: 679px;
+  /*height: 443px;*/
+}
+/*#floor_image {
+  float: left;
+  position: absolute;
+  width: 679px;
+  height: 443px;
+}*/
+
+.table_pic {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 40px;
+  background-color: red;
+  /*z-index:100;*/
+  float: left;
+}
+.table_pic label{
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px; 
+}
+
+.slot {
+  background-color: black;
+  float:left;
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+  z-index: 10;
+  margin: 20px;
+}
+.create_button {
+  padding: 10px;
+  margin: 0px 20px 2px 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.unassignTable {
+  float:left;
+  width: 250px;
+  margin-left: 20px;
+  height: 500px;
+}
+
