@@ -10,6 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.fancybox.css
+ *= require jquery.fancybox-buttons.css
+ *= require jquery.fancybox-thumbs.css
  */
 * {
   padding: 0px;

@@ -45,7 +45,9 @@ h2 {
   background-color: #707070;
   color: #ffffff;
 }
-
+.hovered {
+  background-color: blue;
+}
 #floor_view {
   border: solid 1px black;
   border-radius: 20px;
@@ -97,14 +99,14 @@ background: #D8D8D8;
   float: left;
   position: relative;
   width: 679px;
-  height: 443px;
+  /*height: 443px;*/
 }
-#floor_image {
+/*#floor_image {
   float: left;
   position: absolute;
   width: 679px;
   height: 443px;
-}
+}*/
 
 .table_pic {
   width: 70px;
@@ -112,7 +114,7 @@ background: #D8D8D8;
   position: absolute;
   border-radius: 40px;
   background-color: red;
-  z-index:100;
+  /*z-index:100;*/
   float: left;
 }
 .table_pic label{
@@ -129,9 +131,6 @@ background: #D8D8D8;
   border-radius: 40px;
   z-index: 10;
   margin: 20px;
-}
-.hovered {
-  background-color: blue;
 }
 .create_button {
   padding: 10px;

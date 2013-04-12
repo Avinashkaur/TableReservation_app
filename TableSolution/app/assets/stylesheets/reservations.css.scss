@@ -26,13 +26,14 @@
   width: 200px;
 }
 #cust_list ul {
-  margin-left: 20px;
+  margin: 20px;
   list-style-type: none;
 }
 #cust_list ul li {
   float: none;
   font-size: 13px;
   margin-left: 4px;
+  width: 50px;
 }
 #date_div {
   border: solid 1px black;
@@ -118,5 +119,70 @@
 }
 .ui-datepicker-previous, .ui-datepicker-next {
   margin-left: 10px;
-
 }
+.hovered {
+  background-color: blue;
+}
+#popup_reserve {
+  border: solid 3px blue;
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding: 5px;
+}
+#floor_image_div_r {
+  float: left;
+  position: relative;
+  width: 679px;
+}
+.r_table_pic {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 40px;
+  background-color: red;
+  float: left;
+}
+.r_table_pic label{
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px; 
+}
+
+.r_slot {
+  background-color: black;
+  float:left;
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+  z-index: 10;
+  margin: 20px;
+}
+#reservation_from, #reservation_to, #reservation_num_people {
+  width: 100px;
+}
+.cust_name {
+  font-weight: bold;
+  font-size: 14px;
+}
+#popup_reserve #error_explanation {
+  width: 150px;
+}
+.reserved {
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  border-radius: 40px;
+  text-align: center;
+}
+#fancybox-inner {
+    width: auto!important;
+    height: auto!important;
+}
+
+#fancybox-wrap{
+    width: auto!important;
+    height: auto!important;
+}
+
+

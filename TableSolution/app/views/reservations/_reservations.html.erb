@@ -1,0 +1,15 @@
+  <% 10.times do |index| %>
+    <div class="r_slot" id="r_slot<%= index+1 %>"></div>
+  <% end %>
+
+<% @tables_to_show.each do |t| %>
+  <div class="r_table_pic" obj_id= "<%= t.id %>" loc='<%= "#{t.floor_x_location}#{t.floor_y_location}" %>'>
+    <label><%= t.name %></label>
+  </div>
+<% end %>
+
+
+<% @reservations.each do |r| %>
+	<div class="reserve_slot" id="reservation<%= r.id %>">
+	</div>
+<% end %>

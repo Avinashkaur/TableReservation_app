@@ -14,6 +14,7 @@ class FloorsController < ApplicationController
   def show
     @floor = Floor.find(params[:id])
     @tables_to_show = @floor.tables
+    @reservations = Reservation.all
 
     respond_to do |format|
       format.html # show.html.erb

@@ -8,38 +8,11 @@
   <div id="cust_list">
     <ul>
       <% @customers.each do |cust| %>
-      <li value="<%= cust.name %>"><%= cust.name %></li>
+      <li cust_id="<%= cust.id %>" cust_value="<%= cust.name %>"><%= cust.name %></li>
       <% end %>
     </ul>
   </div>
-  <div id="floor_show_reserve">
-    <div class="floor_heading_reserve">
-      <label class="floor_label_reserve">Floors</label>
-    </div>
-    <ul>
-      <li>First Floor</li>
-      <li>Second Floor</li>
-    </ul>
-  </div>
 </div>
-
-<table hidden>
-  <tr>
-    <th>Num people</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @reservations.each do |reservation| %>
-  <tr>
-    <td><%= reservation.num_people %></td>
-    <td><%= link_to 'Show', reservation %></td>
-    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-    <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
 <div id="container">
   <div id="date_div">
@@ -51,10 +24,26 @@
 
   <div id="reserve_table">
     <div class="floor_heading_reserve">
-      <label class="floor_label_reserve">Floor <label id="floor_num_reserve">1</label></label>
+      <label class="floor_label_reserve">Floor</label>
+      <% floors_array = Floor.all.map { |floor| [floor.position,floor.id] } %>
+      <span>
+      <%= select_tag(:floor, options_for_select(floors_array)) %>
+      </span>
     </div>
-    <%= image_tag("floor.jpg", :id => "floor_image_reserve") %>
+
+    <div id="floor_image_div_r">
+      <%= render 'reservations' %>
+    </div>
+
+
+    <div id="popup_reserve" hidden>
+      <%= render 'form' %>
+    </div>
+    
+  
   </div>
+
+  
 </div>
 
 <br />

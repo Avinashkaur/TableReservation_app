@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130325111644) do
+ActiveRecord::Schema.define(:version => 20130404070619) do
 
   create_table "customers", :force => true do |t|
     t.integer  "reservations_id"
@@ -40,13 +40,16 @@ ActiveRecord::Schema.define(:version => 20130325111644) do
 
   create_table "reservations", :force => true do |t|
     t.integer  "num_people"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "customer_id", :null => false
+    t.time     "from"
+    t.time     "to"
   end
 
   create_table "reservations_tables", :force => true do |t|
     t.integer  "reservation_id"
-    t.integer  "tables_id"
+    t.integer  "table_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

@@ -1,4 +1,7 @@
-<%= form_for(@reservation) do |f| %>
+<%= form_for(@reservation,  :remote => true) do |f| %>
+<%= f.hidden_field :customer_id %>
+ <%= f.hidden_field :table_id %>
+
   <% if @reservation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
@@ -11,10 +14,22 @@
     </div>
   <% end %>
 
+
+  <span id="name_label"></span> 
+
   <div class="field">
     <%= f.label :num_people %><br />
-    <%= f.number_field :num_people %>
+    <%= f.text_field :num_people %>
   </div>
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.text_field :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.text_field :to %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

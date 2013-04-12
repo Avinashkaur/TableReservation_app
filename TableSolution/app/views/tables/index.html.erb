@@ -1,3 +1,4 @@
+
 <div id="header_button">
   <%= button_to '+ New Floor', new_floor_path, { :method => 'get', :class => 'create_button'} %>
   <%= button_to '+ New Table', new_table_path, { :method => 'get', :class => 'create_button'} %>
@@ -10,8 +11,8 @@
 
 
 <div class="unassignTable">
-
 </div>
+
 <div id="floor_view">
   <div id="floor_heading">
 
@@ -24,11 +25,10 @@
   </div>
 
   <div id="floor_image_div">
-  <%= render 'table' %>
+    <%= render 'table' %>
   </div>
 
 </div> 
 
 <div class="unassignTable">
-  
 </div>

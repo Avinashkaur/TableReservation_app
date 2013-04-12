@@ -4,7 +4,7 @@ $(document).ready( function() {
     $(this).draggable({
       stack: '#floor_image_div .table_pic',
       cursor: 'move',
-      revert: true,
+      revert: true
     });
   });
   
@@ -17,30 +17,11 @@ $(document).ready( function() {
     });
   });
 
-
-  $(".unassignTable").each(function() {
-    $(this).droppable({
-      accept: "#floor_image_div .table_pic",
-      drop: function(event, ui) {
-        if (confirm("Are you sure you want to unassign table?")) {
-          $(ui.draggable).draggable({ "revert": false });
-          table_id = $(ui.draggable).attr("obj_id");
-          $(ui.draggable).remove();
-          $.ajax ({
-            url: "/tables/" + table_id,
-            method: "put",
-            data: {"table" : {"floor_id": null , "floor_x_location": null, "floor_y_location": null}, "id": table_id},
-          });
-        }
-      }
-    });
-  });
-
+  outsideAreaDroppable();
   makeDraggableTr();
   appendTablesToSlot();
   makeDroppable();
   disableDroppable();
-  
 });
 
 var disableDroppable = function() {
@@ -63,17 +44,15 @@ var appendTablesToSlot = function () {
   });
 }
 
-
 var makeDroppable = function() {
   $("#floor_image_div .slot").each(function() {
     $(this).droppable({
       accept: "#unassigned tr td, #floor_image_div .table_pic",
-      drop: handleTableDrop,
-      hoverClass: "hovered"
+      hoverClass: "hovered",
+      drop: handleTableDrop
     });
   });
 }
-
 
 var handleTableDrop = function(event, ui) {
 
@@ -103,9 +82,6 @@ var handleTableDrop = function(event, ui) {
   var newPosX = $(this).offset().left - $(this).closest('#floor_image_div').offset().left;
   var newPosY = $(this).offset().top - $(this).closest('#floor_image_div').offset().top;
 
-    // $newDiv.css("margin-left", newPosX);
-    // $newDiv.css("margin-top", newPosY);
-
   floor_id = $("#floor_heading select option:selected").val();
 
   $.ajax({
@@ -122,6 +98,27 @@ var makeDraggableTr = function() {
       stack: '#unassigned tr td',
       cursor: 'move',
       revert: true
+    });
+  });
+}
+
+
+var outsideAreaDroppable = function() {
+  $(".unassignTable").each(function() {
+    $(this).droppable({
+      accept: "#floor_image_div .table_pic",
+      drop: function(event, ui) {
+        if (confirm("Are you sure you want to unassign table?")) {
+          $(ui.draggable).draggable({ "revert": false });
+          table_id = $(ui.draggable).attr("obj_id");
+          $(ui.draggable).remove();
+          $.ajax ({
+            url: "/tables/" + table_id,
+            method: "put",
+            data: {"table" : {"floor_id": null , "floor_x_location": null, "floor_y_location": null}, "id": table_id},
+          });
+        }
+      }
     });
   });
 }

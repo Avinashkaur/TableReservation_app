@@ -1,4 +1,7 @@
-$("#floor_image_div").html("<%= j(render 'tables/table').html_safe %>");
+$("#floor_image_div").html("<%= j(render 'tables/table') %>");
+$("#floor_image_div_r").html("<%= j(render 'reservations/reservations') %>");
 appendTablesToSlot();
 makeDroppable();
 disableDroppable();
+appendTablesToSlots();
+makeTablesDroppable();
