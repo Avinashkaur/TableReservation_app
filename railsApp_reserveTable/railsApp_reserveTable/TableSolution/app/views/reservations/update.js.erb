@@ -1,0 +1,12 @@
+<% if @reservation.new_record? %>
+  $("#popup_reserve").html("<%= j(render 'form').html_safe %>");
+<% else %>
+$("#popup_reserve").hide();
+reserved_div = $('<div>').attr("id","reserved_table_<%= @table.id %>").attr("reservation_id", "<%= @reservation.id %>").addClass("reserved").text('reserved');
+reserved_div.draggable({
+	helper: "clone",
+	stack: ".reserved",
+	revert: true
+});
+  $("div[obj_id=<%= @table.id %>]").attr("cust_id", "<%= Reservation.where(:id => @reservation.id).first.customer_id %>").append(reserved_div);
+<krke% end %>
