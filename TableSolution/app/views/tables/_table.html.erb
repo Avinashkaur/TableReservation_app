@@ -1,9 +1,0 @@
-  <% 10.times do |index| %>
-    <div class="slot" id="slot<%= index+1 %>"></div>
-  <% end %>
-
-  <% @tables_to_show.each do |t| %>
-    <div class="table_pic" obj_id= "<%= t.id %>" loc='<%= "#{t.floor_x_location}#{t.floor_y_location}" %>'>
-      <label><%= t.name %></label>
-    </div>
-  <% end %>
