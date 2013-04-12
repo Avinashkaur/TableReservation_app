@@ -1,0 +1,188 @@
+// Place all the styles related to the Reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#side_panel {
+  padding: 10px;
+  width: 300px;
+  float: left;
+}
+#cust_list {
+  margin-top: 5px;
+  float: left;
+  width: 300px;
+  border: solid 1px black;
+  border-radius: 20px;
+  height: 300px;
+}
+#search_box {
+  width: 300px;
+  border: solid 1px black;
+  border-radius: 20px;
+  float: left;
+}
+#search_box input {
+  margin: 5px 60px 5px 10px;
+  float: left;
+  width: 200px;
+}
+#cust_list ul {
+  margin: 20px;
+  list-style-type: none;
+}
+#cust_list ul li {
+  float: none;
+  font-size: 13px;
+  margin-left: 4px;
+  width: 50px;
+}
+#date_div {
+  border: solid 1px black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 100px;
+  width: 680px;
+  float: left;
+}
+#container {
+  width: 680px;
+  float: left;
+  padding-bottom: 50px;
+}
+#reserve_table {
+  border: solid 1px black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 100px;
+  float: left;
+}
+#floor_image_reserve {
+  float: left;
+}
+#date_div input[type='radio'] {
+  margin-right: 10px;
+
+}
+#floor_show_reserve {
+  border: solid 1px black;
+  border-radius: 10px 10px 20px 20px;
+  margin-top: 5px;
+  float: left;
+  width: 300px;
+}
+#floor_show_reserve ul {
+  margin-left: 20px;
+}
+#floor_show_reserve ul li {
+  float: none;
+}
+.floor_heading_reserve {
+  height: 40px;
+  background-color: #707070;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: white;
+}
+.floor_label_reserve {
+  font-size: 20px;
+  float: left;
+  padding: 10px;
+}
+
+#search_box .ui-autocomplete {
+  width: 200px;
+  height: auto;
+  z-index: 10;
+  background-color: white;
+  border: solid 1px black;
+  list-style-type: none;
+  padding: 0px 5px;
+}
+#search_box .ui-autocomplete li {
+    z-index: 20;
+  }
+#search_box span {
+  display: none;
+}
+#ui-datepicker-div {
+  background-color: white;
+  /*width: 175px;*/
+  border: solid 1px black;
+}
+.ui-datepicker-calendar {
+  margin: 0px 15px;
+  
+}
+.ui-datepicker-calendar tr td {
+  padding: 1px;
+}
+.ui-datepicker-previous, .ui-datepicker-next {
+  margin-left: 10px;
+}
+.hovered {
+  background-color: blue;
+}
+#popup_reserve {
+  border: solid 3px blue;
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding: 5px;
+}
+#floor_image_div_r {
+  float: left;
+  position: relative;
+  width: 679px;
+}
+.r_table_pic {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 40px;
+  background-color: red;
+  float: left;
+}
+.r_table_pic label{
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px; 
+}
+
+.r_slot {
+  background-color: black;
+  float:left;
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+  z-index: 10;
+  margin: 20px;
+}
+#reservation_from, #reservation_to, #reservation_num_people {
+  width: 100px;
+}
+.cust_name {
+  font-weight: bold;
+  font-size: 14px;
+}
+#popup_reserve #error_explanation {
+  width: 150px;
+}
+.reserved {
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  border-radius: 40px;
+  text-align: center;
+}
+#fancybox-inner {
+    width: auto!important;
+    height: auto!important;
+}
+
+#fancybox-wrap{
+    width: auto!important;
+    height: auto!important;
+}
+
+

@@ -1,0 +1,17 @@
+<%= form_for(@reservations_table) do |f| %>
+  <% if @reservations_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservations_table.errors.count, "error") %> prohibited this reservations_table from being saved:</h2>
+
+      <ul>
+      <% @reservations_table.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
